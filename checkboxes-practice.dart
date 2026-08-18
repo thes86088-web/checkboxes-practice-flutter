@@ -25,7 +25,8 @@ class ThisWidgetHasData extends StatefulWidget{
 
 class _ThisWidgetHasDataState extends State<ThisWidgetHasData>{
   
-  List<bool> attendanceToday = [false, false, false, false];  
+  //List<bool> attendanceToday = [false, false, false, false];  
+  Map<String, bool> attendanceToday = { "01" : false, "02" : false, "03" : false, "04" : false}; 
   
   Widget build(BuildContext context){
     return Column(children :[Text( "this page displays the attendance information" ), ThisWidgetHasCheckBoxes( receivedAttendance : attendanceToday, copyOfReceivedAttendance : attendanceToday ) ]);
@@ -34,13 +35,17 @@ class _ThisWidgetHasDataState extends State<ThisWidgetHasData>{
 
 class ThisWidgetHasCheckBoxes extends StatelessWidget{
   
-  final List<bool> receivedAttendance;
-  final List<bool> copyOfReceivedAttendance;
+  //final List<bool> receivedAttendance;
+  //final List<bool> copyOfReceivedAttendance;
+  final Map<String, bool> receivedAttendance;
+  final Map<String, bool> copyOfReceivedAttendance;
   
   ThisWidgetHasCheckBoxes( { required this.receivedAttendance, required this.copyOfReceivedAttendance } );
   
   Widget build(BuildContext context){
     return Text( "this page contains the checkboxes to change attendance information" );
   }
+  
+  
   
 }
